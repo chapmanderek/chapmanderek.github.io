@@ -32,6 +32,12 @@ body {
   margin: 5px;
 }
 
+P.blocktext{
+	margin-left: auto;
+  margin-right: auto;
+  width: 400px
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: [col1-start] 100px  [col2-start] auto  [col3-start] 250px [col3-end];
@@ -88,24 +94,16 @@ body {
   background-color: ;
 }
 
+
 </style>
 
 <body>
 	<div class="wrapper">
   	<div class="box title"><center>Nutrition Explorer</center></div>
-	  <div class="info"><table style = "width:750px; border: 0px">
-	    <colgroup>
-	           <col span="1" style="width: 125px;">
-	           <!-- <col span="1" style="width: 450px;"> -->
-	    </colgroup>
-	        <tbody>
-	        <tr>
-	            <td style="border:none"></td>
-	            <td style="border:none">Diet and nutrition is widely regarded as one of the most important aspects of leading a healthy lifestyle. It's estimated that diet is up to three times more impactful than exercise in achieving a health weight.  The role of diet is no longer relgated to just whether a person is overweight or not. Its now understood that diet plays a significant role in many different types of illnesses such as Asthma, Arthritis, Cronic Diseases, and even certain types of cancer.<br><br>
+	  	<P class = blocktext>
+	    Diet and nutrition is widely regarded as one of the most important aspects of leading a healthy lifestyle. It's estimated that diet is up to three times more impactful than exercise in achieving a health weight.  The role of diet is no longer relgated to just whether a person is overweight or not. Its now understood that diet plays a significant role in many different types of illnesses such as Asthma, Arthritis, Cronic Diseases, and even certain types of cancer.<br><br>
 	    	  	This <em>drilldown visualization</em> allows you to explore many different types of foods in various food categories such as "Pork And Vegetables Hawaiian Style", or as we say in Hawaii: "plate lunch".</td>
-		  	</tr>
-		  	</tbody>
-	</table>
+		  </P>
 	</div>
 
 	  <div class="box instructions"><span style="color:white"><center>Use the sliders to Zoom in on lower fat and caloric foods.  <i>Please be patient.</i>  Due to the number of data points it takes a few seconds to redraw.<br>Hover over any point to get that foods nutritonal card.<br></center></span></div>
