@@ -108,12 +108,12 @@ body {
 	</table>
 	</div>
 
-	  <div class="box instructions"><span style="color:white"><center>Use the sliders to Zoom in on lower fat and caloric foods.  <i>Please be patient.</i>  Due to the number of data points it takes a few seconds to redraw.<br>Hover over any point to get that foods nutritonal card.<br></center></span></div>
+	  <div class="box instructions"><span style="color:white"><center>Use the sliders to Zoom in on the protein and caloric content of foods.  <i>Please be patient.</i>  Due to the number of data points it takes a few seconds to redraw.<br>Hover over any point to get that foods nutritonal card.<br></center></span></div>
 	  <div class="box yslider"><p style = "text-align:center;
 	  				font-size:18px;
 	  				font-family:Arial Narrow;">
-        		Fat Content</p>
-        		<div id="fats-slider"></div></div>
+        		Protein Content</p>
+        		<div id="protein-slider"></div></div>
 	  <div class="box main"><div id="main_viz"></div></div>
 	  <div class="box checkboxes">
 	  	<div>
@@ -291,7 +291,7 @@ d3.csv('data_v2.csv').then(function(data) {
   // dim points that arent in range
 	var pointOpacity = function(d){
  		if(d.Calories > xSlider_value){return '0.2'}
- 		else if (d.Fat > ySlider_value){return '0.2'}
+ 		else if (d.Protein > ySlider_value){return '0.2'}
  		else{return '1.0'}
  		};
 
@@ -425,7 +425,7 @@ d3.csv('data_v2.csv').then(function(data) {
 	var ySlider = d3
 	    .sliderLeft()
 	    .min(0)
-	    .max(saneValue(d3.max(data, d=> parseInt(d.Fat)), 10))
+	    .max(saneValue(d3.max(data, d=> parseInt(d.Protein)), 10))
 	    .height(300)
 	    .step(5)
 	    .ticks(10)
@@ -436,7 +436,7 @@ d3.csv('data_v2.csv').then(function(data) {
 	      d3.select('p#value-range').text(val);});
 
 	//create space and place in the div tag spot
-	d3.select('div#fats-slider')
+	d3.select('div#protein-slider')
 	    .append('svg')
 	    .attr('width', 200)
 	    .attr('height', 350)
@@ -599,7 +599,7 @@ d3.csv('data_v2.csv').then(function(data) {
 		      .attr('d', d3.symbol().type(d3.symbolCircle).size(18))
 		      .attr('opacity', function(d){return pointOpacity(d)})
 		      .attr('stroke', d=> addStroke(d))
-		      .attr('transform', d => `translate(${x(d.Calories)}, ${y(d.Fat)})`)
+		      .attr('transform', d => `translate(${x(d.Calories)}, ${y(d.Protein)})`)
 		      .on("mouseover", mouseover)
 		      .on("mouseout", mouseout);
   }
@@ -623,6 +623,7 @@ d3.csv('data_v2.csv').then(function(data) {
 		document.getElementById('soups_sauces').checked = false;
 		document.getElementById('sweets').checked = false;
 		document.getElementById('vegetables').checked = false;
+		document.getElementById('uncheck').checked = false;
   	
   	updateParams();
   }
