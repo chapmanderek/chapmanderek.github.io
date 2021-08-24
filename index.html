@@ -70,7 +70,7 @@
 
 		function get_current_period_6th(time, day){
 			//setup variable names to make easier to calculate time left
-			if(true){
+			// if(true){
 				mon_hr_start = new Date();
 				mon_hr_start.setHours(8,0,0);
 				mon_hr_end = new Date();
@@ -263,7 +263,7 @@
 				fri_dl_start.setHours(13,50,0);
 				fri_dl_end = new Date();
 				fri_dl_end.setHours(14,5,0);
-			}		
+				// }
 
 			//setHours is hours, minutes, seconds
 			switch(day){
@@ -440,6 +440,7 @@
 					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,5,0)){return ["Passing", ""]}
 					if(time > new Date().setHours(14,5,0)){return ["Pau already",""]}
 					break;
+				}
 
 			return ['not sure'];
 		}
