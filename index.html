@@ -151,6 +151,118 @@
 				tue_dl_start.setHours(14,25,0);
 				tue_dl_end = new Date();
 				tue_dl_end.setHours(14,40,0);
+				wed_ay_start = new Date();
+				wed_ay_start.setHours(8,0,0);
+				wed_ay_end = new Date();
+				wed_ay_end.setHours(8,50,0);
+				wed_p6_start = new Date();
+				wed_p6_start.setHours(8,53,0);
+				wed_p6_end = new Date();
+				wed_p6_end.setHours(9,45,0);
+				wed_rs_start = new Date();
+				wed_rs_start.setHours(9,45,0);
+				wed_rs_end = new Date();
+				wed_rs_end.setHours(10,0,0);
+				wed_p7_start = new Date();
+				wed_p7_start.setHours(10,3,0);
+				wed_p7_end = new Date();
+				wed_p7_end.setHours(10,55,0);
+				wed_lh_start = new Date();
+				wed_lh_start.setHours(10,55,0);
+				wed_lh_end = new Date();
+				wed_lh_end.setHours(11,25,0);
+				wed_p1_start = new Date();
+				wed_p1_start.setHours(11,28,0);
+				wed_p1_end = new Date();
+				wed_p1_end.setHours(12,20,0);
+				wed_p2_start = new Date();
+				wed_p2_start.setHours(12,23,0);
+				wed_p2_end = new Date();
+				wed_p2_end.setHours(13,15,0);
+				wed_dl_start = new Date();
+				wed_dl_start.setHours(13,15,0);
+				wed_dl_end = new Date();
+				wed_dl_end.setHours(13,30,0);
+				thu_hm_start = new Date();
+				thu_hm_start.setHours(8,0,0);
+				thu_hm_end = new Date();
+				thu_hm_end.setHours(8,17,0);
+				thu_p3_start = new Date();
+				thu_p3_start.setHours(8,20,0);
+				thu_p3_end = new Date();
+				thu_p3_end.setHours(9,12,0);
+				thu_rs_start = new Date();
+				thu_rs_start.setHours(9,12,0);
+				thu_rs_end = new Date();
+				thu_rs_end.setHours(9,27,0);
+				thu_p4_start = new Date();
+				thu_p4_start.setHours(9,30,0);
+				thu_p4_end = new Date();
+				thu_p4_end.setHours(10,22,0);
+				thu_p5_start = new Date();
+				thu_p5_start.setHours(10,25,0);
+				thu_p5_end = new Date();
+				thu_p5_end.setHours(11,17,0);
+				thu_lh_start = new Date();
+				thu_lh_start.setHours(11,17,0);
+				thu_lh_end = new Date();
+				thu_lh_end.setHours(11,47,0);
+				thu_p6_start = new Date();
+				thu_p6_start.setHours(11,50,0);
+				thu_p6_end = new Date();
+				thu_p6_end.setHours(12,42,0);
+				thu_p7_start = new Date();
+				thu_p7_start.setHours(12,45,0);
+				thu_p7_end = new Date();
+				thu_p7_end.setHours(13,37,0);
+				thu_p1_start = new Date();
+				thu_p1_start.setHours(13,40,0);
+				thu_p1_end = new Date();
+				thu_p1_end.setHours(14,25,0);
+				thu_dl_start = new Date();
+				thu_dl_start.setHours(14,25,0);
+				thu_dl_end = new Date();
+				thu_dl_end.setHours(14,40,0);
+				fri_hm_start = new Date();
+				fri_hm_start.setHours(8,0,0);
+				fri_hm_end = new Date();
+				fri_hm_end.setHours(8,17,0);
+				fri_p2_start = new Date();
+				fri_p2_start.setHours(8,20,0);
+				fri_p2_end = new Date();
+				fri_p2_end.setHours(9,5,0);
+				fri_p3_start = new Date();
+				fri_p3_start.setHours(9,8,0);
+				fri_p3_end = new Date();
+				fri_p3_end.setHours(9,53,0);
+				fri_rs_start = new Date();
+				fri_rs_start.setHours(9,53,0);
+				fri_rs_end = new Date();
+				fri_rs_end.setHours(10,8,0);
+				fri_p4_start = new Date();
+				fri_p4_start.setHours(10,11,0);
+				fri_p4_end = new Date();
+				fri_p4_end.setHours(10,56,0);
+				fri_p5_start = new Date();
+				fri_p5_start.setHours(10,59,0);
+				fri_p5_end = new Date();
+				fri_p5_end.setHours(11,44,0);
+				fri_lh_start = new Date();
+				fri_lh_start.setHours(11,44,0);
+				fri_lh_end = new Date();
+				fri_lh_end.setHours(12,14,0);
+				fri_p6_start = new Date();
+				fri_p6_start.setHours(12,17,0);
+				fri_p6_end = new Date();
+				fri_p6_end.setHours(13,2,0);
+				fri_p7_start = new Date();
+				fri_p7_start.setHours(13,5,0);
+				fri_p7_end = new Date();
+				fri_p7_end.setHours(13,50,0);
+				fri_dl_start = new Date();
+				fri_dl_start.setHours(13,50,0);
+				fri_dl_end = new Date();
+				fri_dl_end.setHours(14,5,0);
 			}		
 
 			//setHours is hours, minutes, seconds
@@ -237,7 +349,7 @@
 
 				}
 
-			return 'not found';
+			return ['not sure'];
 		}
 
 
@@ -486,6 +598,8 @@
 					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return ["Passing", ""]}
 					if(time > new Date().setHours(14,25,0)){return ["Pau", "Tomorrow"]}
 					break;
+				
+				return ['not sure'];
 			}
 		}
 
