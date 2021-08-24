@@ -268,7 +268,6 @@
 			//setHours is hours, minutes, seconds
 			switch(day){
 				case("Monday"):
-					console.log('in monday')
 					if(time > mon_hr_start && time < mon_hr_end){
 					time_left = diff_minutes(time,mon_hr_end);
 					return ['HR', time_left]}
@@ -300,13 +299,11 @@
 					time_left = diff_minutes(time,mon_dl_end);
 					return ['Dismissal', time_left]}
 
-					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(13,50,0)){return "Passing"}
-					if(time > new Date().setHours(14,5,0)){return "Pau"}
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(13,50,0)){return ["Passing", ""]}
+					if(time > new Date().setHours(14,5,0)){return ["Pau already",""]}
 					break;
 
 				case("Tuesday"):
-					console.log("in tuesday");
-					
 					if(time > tue_hm_start && time < tue_hm_end){
 					time_left = diff_minutes(time,tue_hm_end);
 					return ['Homeroom', time_left]}
@@ -338,10 +335,111 @@
 					time_left = diff_minutes(time,tue_dl_end);
 					return ['Dismissal', time_left]}
 
-					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return "Passing"}
-					if(time > new Date().setHours(14,25,0)){return "Pau"}
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return ["Passing", ""]}
+					if(time > new Date().setHours(14,40,0)){return ["Pau already",""]}
 					break;
 
+				case("Wednesday"):
+					if(time > wed_ay_start && time < wed_ay_end){
+					time_left = diff_minutes(time,wed_ay_end);
+					return ['Advisory', time_left]}
+					if(time > wed_p6_start && time < wed_p6_end){
+					time_left = diff_minutes(time,wed_p6_end);
+					return ['Period 6', time_left]}
+					if(time > wed_rs_start && time < wed_rs_end){
+					time_left = diff_minutes(time,wed_rs_end);
+					return ['Recess', time_left]}
+					if(time > wed_p7_start && time < wed_p7_end){
+					time_left = diff_minutes(time,wed_p7_end);
+					return ['Period 7', time_left]}
+					if(time > wed_lh_start && time < wed_lh_end){
+					time_left = diff_minutes(time,wed_lh_end);
+					return ['Lunch', time_left]}
+					if(time > wed_p1_start && time < wed_p1_end){
+					time_left = diff_minutes(time,wed_p1_end);
+					return ['Period 1', time_left]}
+					if(time > wed_p2_start && time < wed_p2_end){
+					time_left = diff_minutes(time,wed_p2_end);
+					return ['Period 2', time_left]}
+					if(time > wed_dl_start && time < wed_dl_end){
+					time_left = diff_minutes(time,wed_dl_end);
+					return ['Dismissal', time_left]}
+
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(13,30,0)){return ["Passing", ""]}
+					if(time > new Date().setHours(13,30,0)){return ["Pau already",""]}
+					break;
+
+				case("Thursday"):
+					if(time > thu_hm_start && time < thu_hm_end){
+					time_left = diff_minutes(time,thu_hm_end);
+					return ['Homeroom', time_left]}
+					if(time > thu_p3_start && time < thu_p3_end){
+					time_left = diff_minutes(time,thu_p3_end);
+					return ['Period 3', time_left]}
+					if(time > thu_rs_start && time < thu_rs_end){
+					time_left = diff_minutes(time,thu_rs_end);
+					return ['Recess', time_left]}
+					if(time > thu_p4_start && time < thu_p4_end){
+					time_left = diff_minutes(time,thu_p4_end);
+					return ['Period 4', time_left]}
+					if(time > thu_p5_start && time < thu_p5_end){
+					time_left = diff_minutes(time,thu_p5_end);
+					return ['Period 5', time_left]}
+					if(time > thu_lh_start && time < thu_lh_end){
+					time_left = diff_minutes(time,thu_lh_end);
+					return ['Lunch', time_left]}
+					if(time > thu_p6_start && time < thu_p6_end){
+					time_left = diff_minutes(time,thu_p6_end);
+					return ['Period 6', time_left]}
+					if(time > thu_p7_start && time < thu_p7_end){
+					time_left = diff_minutes(time,thu_p7_end);
+					return ['Period 7', time_left]}
+					if(time > thu_p1_start && time < thu_p1_end){
+					time_left = diff_minutes(time,thu_p1_end);
+					return ['Period 1', time_left]}
+					if(time > thu_dl_start && time < thu_dl_end){
+					time_left = diff_minutes(time,thu_dl_end);
+					return ['Dismissal', time_left]}
+
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,40,0)){return ["Passing", ""]}
+					if(time > new Date().setHours(14,40,0)){return ["Pau", ""]}
+					break;
+
+				case("Friday"):
+					if(time > fri_hm_start && time < fri_hm_end){
+					time_left = diff_minutes(time,fri_hm_end);
+					return ['Homeroom', time_left]}
+					if(time > fri_p2_start && time < fri_p2_end){
+					time_left = diff_minutes(time,fri_p2_end);
+					return ['Period 2', time_left]}
+					if(time > fri_p3_start && time < fri_p3_end){
+					time_left = diff_minutes(time,fri_p3_end);
+					return ['Period 3', time_left]}
+					if(time > fri_rs_start && time < fri_rs_end){
+					time_left = diff_minutes(time,fri_rs_end);
+					return ['Recess', time_left]}
+					if(time > fri_p4_start && time < fri_p4_end){
+					time_left = diff_minutes(time,fri_p4_end);
+					return ['Period 4', time_left]}
+					if(time > fri_p5_start && time < fri_p5_end){
+					time_left = diff_minutes(time,fri_p5_end);
+					return ['Period 5', time_left]}
+					if(time > fri_lh_start && time < fri_lh_end){
+					time_left = diff_minutes(time,fri_lh_end);
+					return ['Lunch', time_left]}
+					if(time > fri_p6_start && time < fri_p6_end){
+					time_left = diff_minutes(time,fri_p6_end);
+					return ['Period 6', time_left]}
+					if(time > fri_p7_start && time < fri_p7_end){
+					time_left = diff_minutes(time,fri_p7_end);
+					return ['Period 7', time_left]}
+					if(time > fri_dl_start && time < fri_dl_end){
+					time_left = diff_minutes(time,fri_dl_end);
+					return ['Dismissal', time_left]}
+
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,5,0)){return ["Passing", ""]}
+					if(time > new Date().setHours(14,5,0)){return ["Pau already",""]}
+					break;
 
 				case("Saturday" || "Sunday"):
 					return "weekend";
@@ -595,10 +693,11 @@
 
 				case("Wednesday"):
 
+
 					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return ["Passing", ""]}
 					if(time > new Date().setHours(14,25,0)){return ["Pau", "Tomorrow"]}
 					break;
-				
+
 				return ['not sure'];
 			}
 		}
