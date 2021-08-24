@@ -4,6 +4,8 @@
 
 	<h1>What period is it?!?!</h1>
 
+	<h2>Today is: <span id="today"></span>
+
 	<h2>    6th: <span id="period_output_6th"></span></h2>
 	<h2>7th/8th: <span id="period_output_78th"></span></h2>
 
@@ -34,12 +36,13 @@
 			}
 			else{
 				var grade_6 = get_current_period_6th(cur_date, day);
-				var grade_78 = 6;
+				var grade_78 = get_current_period_78(cur_date, day);
 
 				var info_out_6  = `It's currently ${grade_6[0]}.  There are ${grade_6[1]} minutes left.`;
-				var info_out_78 = 'nothing yet'
+				var info_out_78 = `It's currently ${grade_78[0]}.  There are ${grade_78[1]} minutes left.`
 			}
 
+			document.getElementById("today").textContent = day;
 			document.getElementById("period_output_6th").textContent  = info_out_6;
 			document.getElementById("period_output_78th").textContent = info_out_78;
 			document.getElementById("cur_time").textContent = time;
@@ -59,8 +62,8 @@
 
 		function get_current_period_6th(time, day){
 			//setup variable names to make easier to calculate time left
-			if(true)
-				{mon_hr_start = new Date();
+			if(true){
+				mon_hr_start = new Date();
 				mon_hr_start.setHours(8,0,0);
 				mon_hr_end = new Date();
 				mon_hr_end.setHours(8,17,0);
@@ -91,15 +94,15 @@
 				mon_p5_start = new Date();
 				mon_p5_start.setHours(12,17,0);
 				mon_p5_end = new Date();
-				mon_p5_end.setHours(1,2,0);
+				mon_p5_end.setHours(13,2,0);
 				mon_p6_start = new Date();
-				mon_p6_start.setHours(1,5,0);
+				mon_p6_start.setHours(13,5,0);
 				mon_p6_end = new Date();
-				mon_p6_end.setHours(1,50,0);
+				mon_p6_end.setHours(13,50,0);
 				mon_dl_start = new Date();
-				mon_dl_start.setHours(1,50,0);
+				mon_dl_start.setHours(13,50,0);
 				mon_dl_end = new Date();
-				mon_dl_end.setHours(2,5,0);
+				mon_dl_end.setHours(14,5,0);
 				tue_hm_start = new Date();
 				tue_hm_start.setHours(8,0,0);
 				tue_hm_end = new Date();
@@ -131,15 +134,16 @@
 				tue_p4_start = new Date();
 				tue_p4_start.setHours(12,38,0);
 				tue_p4_end = new Date();
-				tue_p4_end.setHours(1,30,0);
+				tue_p4_end.setHours(13,30,0);
 				tue_p5_start = new Date();
-				tue_p5_start.setHours(1,33,0);
+				tue_p5_start.setHours(13,33,0);
 				tue_p5_end = new Date();
-				tue_p5_end.setHours(2,25,0);
+				tue_p5_end.setHours(14,25,0);
 				tue_dl_start = new Date();
-				tue_dl_start.setHours(2,25,0);
+				tue_dl_start.setHours(14,25,0);
 				tue_dl_end = new Date();
-				tue_dl_end.setHours(2,40,0);}
+				tue_dl_end.setHours(14,40,0);
+			}		
 
 			//setHours is hours, minutes, seconds
 			switch(day){
@@ -218,24 +222,6 @@
 					if(time > new Date().setHours(14,25,0)){return "Pau"}
 					break;
 
-				case("Wednesday"):
-					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(8,50,0)){return "Advisory"}
-					if(time > new Date().setHours(8,53,0) && time < new Date().setHours(9,45,0)){return "Period 6"}
-					if(time > new Date().setHours(9,45,0) && time < new Date().setHours(10,0,0)){return "Recess"}
-					if(time > new Date().setHours(10,3,0) && time < new Date().setHours(10,55,0)){return "Period 7"}
-					if(time > new Date().setHours(10,55,0) && time < new Date().setHours(11,25,0)){return "Lunch"}
-					if(time > new Date().setHours(11,28,0) && time < new Date().setHours(12,20,0)){return "Period 1"}
-					if(time > new Date().setHours(12,23,0) && time < new Date().setHours(13,15,0)){return "Period 2"}
-					if(time > new Date().setHours(13,15,0) && time < new Date().setHours(13,30,0)){return "Dismissal"}
-					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(13,30,0)){return "Passing"}
-					if(time > new Date().setHours(13,30,0)){return "Pau"}
-					break;
-				case("Thursday"):
-					break;
-
-				case("Friday"):
-					break;
-
 
 				case("Saturday" || "Sunday"):
 					return "weekend";
@@ -244,6 +230,255 @@
 				}
 
 			return 'not found';
+		}
+
+
+		function get_current_period_78(time, day){
+			//7th/8th grade variables
+			if(true){
+				mon_hr_start_78 = new Date();
+				mon_hr_start_78.setHours(8,0,0);
+				mon_hr_end_78 = new Date();
+				mon_hr_end_78.setHours(8,12,0);
+				mon_p1_start_78 = new Date();
+				mon_p1_start_78.setHours(8,15,0);
+				mon_p1_end_78 = new Date();
+				mon_p1_end_78.setHours(9,0,0);
+				mon_p2_start_78 = new Date();
+				mon_p2_start_78.setHours(9,3,0);
+				mon_p2_end_78 = new Date();
+				mon_p2_end_78.setHours(9,48,0);
+				mon_p3_start_78 = new Date();
+				mon_p3_start_78.setHours(9,51,0);
+				mon_p3_end_78 = new Date();
+				mon_p3_end_78.setHours(10,36,0);
+				mon_rs_start_78 = new Date();
+				mon_rs_start_78.setHours(10,36,0);
+				mon_rs_end_78 = new Date();
+				mon_rs_end_78.setHours(10,51,0);
+				mon_p4_start_78 = new Date();
+				mon_p4_start_78.setHours(10,54,0);
+				mon_p4_end_78 = new Date();
+				mon_p4_end_78.setHours(11,39,0);
+				mon_p5_start_78 = new Date();
+				mon_p5_start_78.setHours(11,42,0);
+				mon_p5_end_78 = new Date();
+				mon_p5_end_78.setHours(12,27,0);
+				mon_lh_start_78 = new Date();
+				mon_lh_start_78.setHours(12,27,0);
+				mon_lh_end_78 = new Date();
+				mon_lh_end_78.setHours(12,57,0);
+				mon_p6_start_78 = new Date();
+				mon_p6_start_78.setHours(1,0,0);
+				mon_p6_end_78 = new Date();
+				mon_p6_end_78.setHours(1,50,0);
+				mon_dl_start_78 = new Date();
+				mon_dl_start_78.setHours(1,50,0);
+				mon_dl_end_78 = new Date();
+				mon_dl_end_78.setHours(2,5,0);
+				tue_hm_start_78 = new Date();
+				tue_hm_start_78.setHours(8,0,0);
+				tue_hm_end_78 = new Date();
+				tue_hm_end_78.setHours(8,12,0);
+				tue_p7_start_78 = new Date();
+				tue_p7_start_78.setHours(8,15,0);
+				tue_p7_end_78 = new Date();
+				tue_p7_end_78.setHours(9,0,0);
+				tue_p1_start_78 = new Date();
+				tue_p1_start_78.setHours(9,3,0);
+				tue_p1_end_78 = new Date();
+				tue_p1_end_78.setHours(9,55,0);
+				tue_rs_start_78 = new Date();
+				tue_rs_start_78.setHours(9,55,0);
+				tue_rs_end_78 = new Date();
+				tue_rs_end_78.setHours(10,10,0);
+				tue_p2_start_78 = new Date();
+				tue_p2_start_78.setHours(10,13,0);
+				tue_p2_end_78 = new Date();
+				tue_p2_end_78.setHours(11,5,0);
+				tue_p3_start_78 = new Date();
+				tue_p3_start_78.setHours(11,8,0);
+				tue_p3_end_78 = new Date();
+				tue_p3_end_78.setHours(12,0,0);
+				tue_lh_start_78 = new Date();
+				tue_lh_start_78.setHours(12,0,0);
+				tue_lh_end_78 = new Date();
+				tue_lh_end_78.setHours(12,30,0);
+				tue_p4_start_78 = new Date();
+				tue_p4_start_78.setHours(12,33,0);
+				tue_p4_end_78 = new Date();
+				tue_p4_end_78.setHours(1,25,0);
+				tue_p5_start_78 = new Date();
+				tue_p5_start_78.setHours(1,28,0);
+				tue_p5_end_78 = new Date();
+				tue_p5_end_78.setHours(2,25,0);
+				tue_dl_start_78 = new Date();
+				tue_dl_start_78.setHours(2,25,0);
+				tue_dl_end_78 = new Date();
+				tue_dl_end_78.setHours(2,40,0);
+				wed_ay_start_78 = new Date();
+				wed_ay_start_78.setHours(8,0,0);
+				wed_ay_end_78 = new Date();
+				wed_ay_end_78.setHours(8,45,0);
+				wed_p6_start_78 = new Date();
+				wed_p6_start_78.setHours(8,48,0);
+				wed_p6_end_78 = new Date();
+				wed_p6_end_78.setHours(9,40,0);
+				wed_p7_start_78 = new Date();
+				wed_p7_start_78.setHours(9,43,0);
+				wed_p7_end_78 = new Date();
+				wed_p7_end_78.setHours(10,35,0);
+				wed_rs_start_78 = new Date();
+				wed_rs_start_78.setHours(10,35,0);
+				wed_rs_end_78 = new Date();
+				wed_rs_end_78.setHours(10,50,0);
+				wed_p1_start_78 = new Date();
+				wed_p1_start_78.setHours(10,53,0);
+				wed_p1_end_78 = new Date();
+				wed_p1_end_78.setHours(11,45,0);
+				wed_lh_start_78 = new Date();
+				wed_lh_start_78.setHours(11,45,0);
+				wed_lh_end_78 = new Date();
+				wed_lh_end_78.setHours(12,15,0);
+				wed_p2_start_78 = new Date();
+				wed_p2_start_78.setHours(12,18,0);
+				wed_p2_end_78 = new Date();
+				wed_p2_end_78.setHours(1,15,0);
+				wed_dl_start_78 = new Date();
+				wed_dl_start_78.setHours(1,15,0);
+				wed_dl_end_78 = new Date();
+				wed_dl_end_78.setHours(1,30,0);
+				thu_hm_start_78 = new Date();
+				thu_hm_start_78.setHours(8,0,0);
+				thu_hm_end_78 = new Date();
+				thu_hm_end_78.setHours(8,12,0);
+				thu_p3_start_78 = new Date();
+				thu_p3_start_78.setHours(8,15,0);
+				thu_p3_end_78 = new Date();
+				thu_p3_end_78.setHours(9,7,0);
+				thu_p4_start_78 = new Date();
+				thu_p4_start_78.setHours(9,10,0);
+				thu_p4_end_78 = new Date();
+				thu_p4_end_78.setHours(10,2,0);
+				thu_rs_start_78 = new Date();
+				thu_rs_start_78.setHours(10,2,0);
+				thu_rs_end_78 = new Date();
+				thu_rs_end_78.setHours(10,17,0);
+				thu_p5_start_78 = new Date();
+				thu_p5_start_78.setHours(10,20,0);
+				thu_p5_end_78 = new Date();
+				thu_p5_end_78.setHours(11,12,0);
+				thu_p6_start_78 = new Date();
+				thu_p6_start_78.setHours(11,15,0);
+				thu_p6_end_78 = new Date();
+				thu_p6_end_78.setHours(12,7,0);
+				thu_lh_start_78 = new Date();
+				thu_lh_start_78.setHours(12,7,0);
+				thu_lh_end_78 = new Date();
+				thu_lh_end_78.setHours(12,37,0);
+				thu_p7_start_78 = new Date();
+				thu_p7_start_78.setHours(12,40,0);
+				thu_p7_end_78 = new Date();
+				thu_p7_end_78.setHours(1,32,0);
+				thu_p1_start_78 = new Date();
+				thu_p1_start_78.setHours(1,35,0);
+				thu_p1_end_78 = new Date();
+				thu_p1_end_78.setHours(2,25,0);
+				thu_dl_start_78 = new Date();
+				thu_dl_start_78.setHours(2,25,0);
+				thu_dl_end_78 = new Date();
+				thu_dl_end_78.setHours(2,40,0);
+				fri_hm_start_78 = new Date();
+				fri_hm_start_78.setHours(8,0,0);
+				fri_hm_end_78 = new Date();
+				fri_hm_end_78.setHours(8,12,0);
+				fri_p2_start_78 = new Date();
+				fri_p2_start_78.setHours(8,15,0);
+				fri_p2_end_78 = new Date();
+				fri_p2_end_78.setHours(9,0,0);
+				fri_p3_start_78 = new Date();
+				fri_p3_start_78.setHours(9,3,0);
+				fri_p3_end_78 = new Date();
+				fri_p3_end_78.setHours(9,48,0);
+				fri_p4_start_78 = new Date();
+				fri_p4_start_78.setHours(9,51,0);
+				fri_p4_end_78 = new Date();
+				fri_p4_end_78.setHours(10,36,0);
+				fri_rs_start_78 = new Date();
+				fri_rs_start_78.setHours(10,36,0);
+				fri_rs_end_78 = new Date();
+				fri_rs_end_78.setHours(10,51,0);
+				fri_p5_start_78 = new Date();
+				fri_p5_start_78.setHours(10,54,0);
+				fri_p5_end_78 = new Date();
+				fri_p5_end_78.setHours(11,39,0);
+				fri_p6_start_78 = new Date();
+				fri_p6_start_78.setHours(11,42,0);
+				fri_p6_end_78 = new Date();
+				fri_p6_end_78.setHours(12,27,0);
+				fri_lh_start_78 = new Date();
+				fri_lh_start_78.setHours(12,27,0);
+				fri_lh_end_78 = new Date();
+				fri_lh_end_78.setHours(12,57,0);
+				fri_p7_start_78 = new Date();
+				fri_p7_start_78.setHours(1,0,0);
+				fri_p7_end_78 = new Date();
+				fri_p7_end_78.setHours(1,50,0);
+				fri_dl_start_78 = new Date();
+				fri_dl_start_78.setHours(1,50,0);
+				fri_dl_end_78 = new Date();
+				fri_dl_end_78.setHours(2,5,0);
+			}
+
+			switch(day){
+				case("Monday"):
+
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return "Passing"}
+					if(time > new Date().setHours(14,25,0)){return "Pau"}
+					break;
+
+				case("Tuesday"):
+					if(time > tue_hm_start_78 && time < tue_hm_end_78){
+					time_left = diff_minutes(time,tue_hm_end_78);
+					return ['Homeroom', time_left]}
+					if(time > tue_p7_start_78 && time < tue_p7_end_78){
+					time_left = diff_minutes(time,tue_p7_end_78);
+					return ['Period 7', time_left]}
+					if(time > tue_p1_start_78 && time < tue_p1_end_78){
+					time_left = diff_minutes(time,tue_p1_end_78);
+					return ['Period 1', time_left]}
+					if(time > tue_rs_start_78 && time < tue_rs_end_78){
+					time_left = diff_minutes(time,tue_rs_end_78);
+					return ['Recess', time_left]}
+					if(time > tue_p2_start_78 && time < tue_p2_end_78){
+					time_left = diff_minutes(time,tue_p2_end_78);
+					return ['Period 2', time_left]}
+					if(time > tue_p3_start_78 && time < tue_p3_end_78){
+					time_left = diff_minutes(time,tue_p3_end_78);
+					return ['Period 3', time_left]}
+					if(time > tue_lh_start_78 && time < tue_lh_end_78){
+					time_left = diff_minutes(time,tue_lh_end_78);
+					return ['Lunch', time_left]}
+					if(time > tue_p4_start_78 && time < tue_p4_end_78){
+					time_left = diff_minutes(time,tue_p4_end_78);
+					return ['Period 4', time_left]}
+					if(time > tue_p5_start_78 && time < tue_p5_end_78){
+					time_left = diff_minutes(time,tue_p5_end_78);
+					return ['Period 5', time_left]}
+					if(time > tue_dl_start_78 && time < tue_dl_end_78){
+					time_left = diff_minutes(time,tue_dl_end_78);
+					return ['Dismissal', time_left]}
+
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return "Passing"}
+					if(time > new Date().setHours(14,25,0)){return "Pau"}
+					break;
+
+				case("Wednesday"):
+
+					if(time > new Date().setHours(8,0,0) && time < new Date().setHours(14,25,0)){return "Passing"}
+					if(time > new Date().setHours(14,25,0)){return "Pau"}
+					break;
+			}
 		}
 
 		function get_next_period_6th(time, day){
