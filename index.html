@@ -1,3 +1,7 @@
+<!-- things to fix
+there are 1 minutes left
+minutes left goes blank on the last minute of the period -->
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -21,14 +25,6 @@
 			var date = cur_date.toLocaleDateString();
 			var time = cur_date.toLocaleTimeString();
 			var day = get_day(cur_date.getDay());
-
-			var tdate = new Date();
-			tdate.setHours(21,0,0);
-
-			console.log(tdate);
-
-
-			console.log(diff_minutes(cur_date, tdate));
 
 			if(day=="Saturday" || day == "Sunday"){
 				var info_out_6  = "It's the weekend!!";
@@ -70,7 +66,7 @@
 
 		function get_current_period_6th(time, day){
 			//setup variable names to make easier to calculate time left
-			// if(true){
+			if(true){
 				mon_hr_start = new Date();
 				mon_hr_start.setHours(8,0,0);
 				mon_hr_end = new Date();
@@ -263,7 +259,7 @@
 				fri_dl_start.setHours(13,50,0);
 				fri_dl_end = new Date();
 				fri_dl_end.setHours(14,5,0);
-				// }
+				}
 
 			//setHours is hours, minutes, seconds
 			switch(day){
