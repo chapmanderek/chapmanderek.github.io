@@ -2,6 +2,7 @@
 there are 1 minutes left
 minutes left goes blank on the last minute of the period 
 put the refresh button somewhere better or have it automatically update every few secounds
+type="button"
 -->
 
 <!DOCTYPE html>
@@ -87,7 +88,7 @@ put the refresh button somewhere better or have it automatically update every fe
 <body>
 <div class="container">
 	<div class="wrapper">
-		<div class="title"><center>What Period is it?!?</center></div>
+		<div class="title"><center>What Period is It?!?</center></div>
 
 		<div class="box left-6">
 			<center>
@@ -107,6 +108,8 @@ put the refresh button somewhere better or have it automatically update every fe
 				<span id="cur_time"></span><br>
 				<span id="cur_date"></span>
 			</h3>
+			<br><br><br>
+			<button style="height:75px;width:125px;color:white;background-color:darkgrey;" onclick="load_info()">Refresh</button>
 			</center>
 		</div>
 
@@ -122,7 +125,7 @@ put the refresh button somewhere better or have it automatically update every fe
 	</div>
 </div>
 
-	<button type="button" onclick="load_info()">Refresh</button>
+	
 
 <script>
 	const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
