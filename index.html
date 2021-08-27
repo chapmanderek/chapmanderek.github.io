@@ -1,8 +1,6 @@
 <!-- things to fix
-there are 1 minutes left
 minutes left goes blank on the last minute of the period 
 put the refresh button somewhere better or have it automatically update every few secounds
-type="button"
 -->
 
 <!DOCTYPE html>
@@ -64,6 +62,12 @@ type="button"
 		font-size: 50px;
 		/*background-color: #003f5c;  */
 		}
+	.refresh-button{
+		height:75px;
+		width:125px;
+		color:white;
+		background-color:darkgrey;
+		}
 	.left-6 {
 		grid-column: col1-start / col2-start;
 		grid-row:  row2-start/row2-end;
@@ -95,6 +99,7 @@ type="button"
 			<h1>6th Grade</h1>
 			<h2>
 				<span id="period_output_6th"></span>
+				<br>
 				<span id="time_left_6th"></span>
 			</h2>
 			</center>
@@ -109,7 +114,7 @@ type="button"
 				<span id="cur_date"></span>
 			</h3>
 			<br><br><br>
-			<button style="height:75px;width:125px;color:white;background-color:darkgrey;" onclick="load_info()">Refresh</button>
+			<button class="refresh-button" onclick="load_info()">Refresh</button>
 			</center>
 		</div>
 
@@ -118,6 +123,7 @@ type="button"
 			<h1>7th / 8th Grade</h1>
 			<h2>
 				<span id="period_output_78"></span>
+				<br>
 				<span id="time_left_78"></span>
 			</h2>
 			</center>
@@ -140,14 +146,18 @@ type="button"
 		var time_left_78 = "";
 
 		hours = cur_date.getHours();
-		if(hours > 12){
+		if(hours == 12){
+			time = (hours).toString();
+			ap = "pm";
+			}
+		else if(hours > 12){
 			time = (hours-12).toString();
 			ap = "pm";
-		}
+			}
 		else{
 			time = hours.toString();
 			ap = "am"
-		}
+			}
 		time = time + ":" + cur_date.getMinutes().toString() + " " + ap;
 
 		if(day=="Saturday" || day == "Sunday"){
@@ -161,12 +171,17 @@ type="button"
 			var info_out_6  = `${grade_6[0]}`;
 			var info_out_78 = `${grade_78[0]}`;
 
-			if(grade_6[1] > 0){
-				time_left_6 = `${grade_6[1]} minutes left.`;
+			if(grade_6[1] == 1){time_left_6 = `${grade_6[1]} minute left`;
+			}
+			else if(grade_6[1] > 1){
+				time_left_6 = `${grade_6[1]} minutes left`;
 			}
 
-			if(grade_78[1] > 0){
-				time_left_78 = `${grade_78[1]} minutes left.`;
+			if(grade_78[1] == 1){
+				time_left_78 = `${grade_78[1]} minute left`;
+			}
+			else if(grade_78[1] > 1){
+				time_left_78 = `${grade_78[1]} minutes left`;
 			}
 		}
 
@@ -180,7 +195,7 @@ type="button"
 		document.getElementById("period_output_78").textContent = info_out_78;
 		document.getElementById("time_left_78").textContent = time_left_78;
 		
-		await sleepNow(2000);
+		// await sleepNow(2000);
 
 		console.log("end of load_info");
 	}
