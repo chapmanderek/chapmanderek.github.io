@@ -1,6 +1,8 @@
 <!-- things to fix
 there are 1 minutes left
-minutes left goes blank on the last minute of the period -->
+minutes left goes blank on the last minute of the period 
+put the refresh button somewhere better or have it automatically update every few secounds
+-->
 
 <!DOCTYPE html>
 <html>
@@ -66,6 +68,7 @@ minutes left goes blank on the last minute of the period -->
 		grid-row:  row2-start/row2-end;
 		text-align: left;
 		font-family: sans-serif;
+		background-color: #cfbae1;
 		}
 	.center-info {
 		grid-column: col2-start / col3-start;
@@ -77,6 +80,7 @@ minutes left goes blank on the last minute of the period -->
 		grid-column: col3-start / col3-end;
 		grid-row:  row2-start/row2-end;
 		font-family: sans-serif;
+		background-color: #c1e0f7;
 		}
 </style>
 
@@ -87,28 +91,32 @@ minutes left goes blank on the last minute of the period -->
 
 		<div class="box left-6">
 			<center>
-			<h2>6th Grade</h2>
-			<span id="period_output_6th"></span></h2>
-			<span id="time_left_6th"></span></h2>
+			<h1>6th Grade</h1>
+			<h2>
+				<span id="period_output_6th"></span>
+				<span id="time_left_6th"></span>
+			</h2>
 			</center>
 		</div>
 
 		<div class="center-info">
 			<center>
 			<h2>Currently its:</h2>
-			<h4>
+			<h3>
 				<span id="today"></span><br>
 				<span id="cur_time"></span><br>
 				<span id="cur_date"></span>
-			</h4>
+			</h3>
 			</center>
 		</div>
 
 		<div class="box right-78">
 			<center>
-			<h2>7th and 8th Grade</h2>
-			<span id="period_output_78"></span></h2>
-			<span id="time_left_78"></span></h2>
+			<h1>7th / 8th Grade</h1>
+			<h2>
+				<span id="period_output_78"></span>
+				<span id="time_left_78"></span>
+			</h2>
 			</center>
 		</div>
 	</div>
@@ -117,7 +125,9 @@ minutes left goes blank on the last minute of the period -->
 	<button type="button" onclick="load_info()">Refresh</button>
 
 <script>
-	function load_info(){
+	const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+	async function load_info(){
 		var cur_date = new Date();
 		var date = cur_date.toLocaleDateString();
 		// var time = cur_date.toLocaleTimeString();
@@ -167,6 +177,9 @@ minutes left goes blank on the last minute of the period -->
 		document.getElementById("period_output_78").textContent = info_out_78;
 		document.getElementById("time_left_78").textContent = time_left_78;
 		
+		await sleepNow(2000);
+
+		console.log("end of load_info");
 	}
 
 	function diff_minutes(dt2, dt1) {
@@ -937,7 +950,7 @@ minutes left goes blank on the last minute of the period -->
 load_info();
 // while(true){
 // 	load_info();	
-// }	
+// 	}	
 
 
 </script>
