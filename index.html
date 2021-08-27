@@ -4,18 +4,110 @@ minutes left goes blank on the last minute of the period -->
 
 <!DOCTYPE html>
 <html>
+
+<head><title>What Period is It?!?</title></head>
+
+<style type="text/css">
+	table {
+	  font-family: verdana, sans-serif;
+	  border-collapse: collapse;
+	}
+
+	td, th {
+	  border: 1px solid black;
+	  text-align: left;
+	  font-size: 14px;
+	  padding: 2px;
+	  vertical-align: middle;
+	}
+
+	label {
+	    font: 1rem 'Fira Sans', sans-serif;
+	}
+
+	header {
+		width:100%
+	}
+
+	body {
+	  margin: 5px;
+	}
+
+	.wrapper {
+	    display: grid;
+	    grid-template-columns: [col1-start] 300px [col2-start] 250px [col3-start] 300px [col3-end];
+	    grid-template-rows: [row1-start] 100px [row2-start] 300px [row2-end];
+	    background-color: #fff;
+	    color: #444;
+	  }
+	.box {
+	    background-color: lightgrey;
+	    color: black;
+	    border-radius: 5px;
+	    padding: 10px;
+	    align-items: center;
+
+	  }
+	.title{
+		grid-column: col1-start / col3-end;
+		grid-row: row1-start;
+		/*color:  white;*/
+		font-family: sans-serif;
+		font-size: 50px;
+		/*background-color: #003f5c;  */
+		}
+	.left-6 {
+		grid-column: col1-start / col2-start;
+		grid-row:  row2-start/row2-end;
+		text-align: left;
+		font-family: sans-serif;
+		}
+	.center-info {
+		grid-column: col2-start / col3-start;
+		grid-row:  row2-start/row2-end;
+		color: #282828;
+		/*height:500px;*/
+		}
+	.right-78 {
+		grid-column: col3-start / col3-end;
+		grid-row:  row2-start/row2-end;
+		font-family: sans-serif;
+		}
+</style>
+
 <body>
 
-	<h1>What period is it?!?!</h1>
+	<div class="wrapper">
+		<div class="title"><center>What Period is it?!?</center></div>
 
-	<h2>Today is: <span id="today"></span>
+		<div class="box left-6">
+			<center>
+			<h2>6th Grade</h2>
+			<span id="period_output_6th"></span></h2>
+			<span id="time_left_6th"></span></h2>
+			</center>
+		</div>
 
-	<h2>    6th: <span id="period_output_6th"></span></h2>
-	<h2>7th/8th: <span id="period_output_78th"></span></h2>
+		<div class="center-info">
+			<center>
+			<h2>Currently its:</h2>
+			<h4>
+				<span id="today"></span><br>
+				<span id="cur_time"></span><br>
+				<span id="cur_date"></span>
+			</h4>
+			</center>
+		</div>
 
-	<p>Current Time is: <span id="cur_time"></span></p>
-	<p>Current Date is:  <span id="cur_date"></span></p>
-	
+		<div class="box right-78">
+			<center>
+			<h2>7th and 8th Grade</h2>
+			<span id="period_output_78"></span></h2>
+			<span id="time_left_78"></span></h2>
+			</center>
+		</div>
+
+	</div>
 
 	<button type="button" onclick="load_info()">Refresh</button>
 
@@ -23,8 +115,22 @@ minutes left goes blank on the last minute of the period -->
 		function load_info(){
 			var cur_date = new Date();
 			var date = cur_date.toLocaleDateString();
-			var time = cur_date.toLocaleTimeString();
+			// var time = cur_date.toLocaleTimeString();
 			var day = get_day(cur_date.getDay());
+
+			var time_left_6 = "";
+			var time_left_78 = "";
+
+			hours = cur_date.getHours();
+			if(hours > 12){
+				time = (hours-12).toString();
+				ap = "pm";
+			}
+			else{
+				time = hours.toString();
+				ap = "am"
+			}
+			time = time + ":" + cur_date.getMinutes().toString() + " " + ap;
 
 			if(day=="Saturday" || day == "Sunday"){
 				var info_out_6  = "It's the weekend!!";
@@ -34,23 +140,28 @@ minutes left goes blank on the last minute of the period -->
 				var grade_6 = get_current_period_6th(cur_date, day);
 				var grade_78 = get_current_period_78(cur_date, day);
 
-				var info_out_6  = `It's currently ${grade_6[0]}.`;
-				var info_out_78 = `It's currently ${grade_78[0]}.`
+				var info_out_6  = `${grade_6[0]}`;
+				var info_out_78 = `${grade_78[0]}`;
 
 				if(grade_6[1] > 0){
-					info_out_6 = info_out_6 + `  There are ${grade_6[1]} minutes left.`;
+					time_left_6 = `${grade_6[1]} minutes left.`;
 				}
 
 				if(grade_78[1] > 0){
-					info_out_78 = info_out_78 + `  There are ${grade_78[1]} minutes left.`;
+					time_left_78 = `${grade_78[1]} minutes left.`;
 				}
 			}
 
 			document.getElementById("today").textContent = day;
-			document.getElementById("period_output_6th").textContent  = info_out_6;
-			document.getElementById("period_output_78th").textContent = info_out_78;
 			document.getElementById("cur_time").textContent = time;
 			document.getElementById("cur_date").textContent = date;
+
+			document.getElementById("period_output_6th").textContent  = info_out_6;
+			document.getElementById("time_left_6th").textContent = time_left_6;
+			
+			document.getElementById("period_output_78").textContent = info_out_78;
+			document.getElementById("time_left_78").textContent = time_left_78;
+			
 		}
 
 		function diff_minutes(dt2, dt1) {
@@ -818,8 +929,11 @@ minutes left goes blank on the last minute of the period -->
 			}
 		}
 
-		
 	load_info();
+	// while(true){
+	// 	load_info();	
+	// }	
+	
 
 	</script>
 
