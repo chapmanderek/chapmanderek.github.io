@@ -158,12 +158,19 @@ put the refresh button somewhere better or have it automatically update every fe
 			time = hours.toString();
 			ap = "am"
 			}
-		time = time + ":" + cur_date.getMinutes().toString() + " " + ap;
+
+		minutes = cur_date.getMinutes();
+		if(minutes < 10){
+			time = time + ":0" + cur_date.getMinutes().toString() + " " + ap;
+			}
+		else{
+			time = time + ":" + cur_date.getMinutes().toString() + " " + ap;
+			}
 
 		if(day=="Saturday" || day == "Sunday"){
 			var info_out_6  = "It's the weekend!!";
 			var info_out_78 = "It's the weekend!!";
-		}
+			}
 		else{
 			var grade_6 = get_current_period_6th(cur_date, day);
 			var grade_78 = get_current_period_78(cur_date, day);
@@ -171,18 +178,19 @@ put the refresh button somewhere better or have it automatically update every fe
 			var info_out_6  = `${grade_6[0]}`;
 			var info_out_78 = `${grade_78[0]}`;
 
-			if(grade_6[1] == 1){time_left_6 = `${grade_6[1]} minute left`;
-			}
+			if(grade_6[1] == 1){
+				time_left_6 = `${grade_6[1]} minute left`;
+				}
 			else if(grade_6[1] > 1){
 				time_left_6 = `${grade_6[1]} minutes left`;
-			}
+				}
 
 			if(grade_78[1] == 1){
 				time_left_78 = `${grade_78[1]} minute left`;
-			}
+				}
 			else if(grade_78[1] > 1){
 				time_left_78 = `${grade_78[1]} minutes left`;
-			}
+				}
 		}
 
 		document.getElementById("today").textContent = day;
