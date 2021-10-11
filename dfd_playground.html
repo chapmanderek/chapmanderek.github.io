@@ -9,10 +9,16 @@
 
 <body>    
     <script>      
-    //danfo is exposed on dfd namespace       
-    s = new dfd.Series([1,2,3,4,5])    ;
-    s.print();
-    s.ctypes.print(); 
+    //danfo is exposed on dfd namespace   
+    dfd.read_csv("https://github.com/chapmanderek/chapmanderek.github.io/blob/93e3874e95dd9219f3ff77faafc6293d9f551538/bell_schedule.csv").then(df => {                
+        //do something like display descriptive statistics                
+        df.describe().print()                            
+        }).catch(err => {                
+            console.log(err);            
+            })    
+    // s = new dfd.Series([1,2,3,4,5])    ;
+    // s.print();
+    // s.ctypes.print(); 
     </script>
 </body>
 </html>
