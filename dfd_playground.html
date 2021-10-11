@@ -9,16 +9,49 @@
 
 <body>    
     <script>      
+
+        var cur_date = new Date();
+		var date = cur_date.toLocaleDateString();
+
+		// var day = get_day(cur_date.getDay());
+        var day = cur_date.getDay();
+
+		var time_left_6 = "";
+		var time_left_78 = "";
+
+		hours = cur_date.getHours();
+		if(hours == 12){
+			time = (hours).toString();
+			ap = "pm";
+			}
+		else if(hours > 12){
+			time = (hours-12).toString();
+			ap = "pm";
+			}
+		else{
+			time = hours.toString();
+			ap = "am"
+			}
+
+        console.log()
+
     //danfo is exposed on dfd namespace   
     dfd.read_csv("https://chapmanderek.github.io/bell_schedule.csv").then(df => {                
-        //do something like display descriptive statistics                
-        df.describe().print()                            
+        //debugging info
+        // df.head(3).print(); 
+        df.ctypes.print();
+        console.log(df.columns);
+        let sf = df["StartTime"];
+        console.log(sf);
+
+        // df['Start time'] = dfd.toDateTime({data:sf})
+
+        // df.iloc( {rows: df["Grade"].eq(6)} ).print()
+
         }).catch(err => {                
             console.log(err);            
             })    
-    // s = new dfd.Series([1,2,3,4,5])    ;
-    // s.print();
-    // s.ctypes.print(); 
+
     </script>
 </body>
 </html>
