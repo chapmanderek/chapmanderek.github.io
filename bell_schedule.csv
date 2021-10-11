@@ -47,51 +47,51 @@ Grade,Day,Period,Start time,End time
 6,Friday,Period 6,12:17:00 PM,1:02:00 PM
 6,Friday,Period 7,1:05:00 PM,1:50:00 PM
 6,Friday,Dismissal,1:50:00 PM,2:05:00 PM
-7/8,Monday,HR,8:00:00 AM,8:12:00 AM
-7/8,Monday,Period 1,8:15:00 AM,9:00:00 AM
-7/8,Monday,Period 2,9:03:00 AM,9:48:00 AM
-7/8,Monday,Period 3,9:51:00 AM,10:36:00 AM
-7/8,Monday,Recess,10:36:00 AM,10:51:00 AM
-7/8,Monday,Period 4,10:54:00 AM,11:39:00 AM
-7/8,Monday,Period 5,11:42:00 AM,12:27:00 PM
-7/8,Monday,Lunch,12:27:00 PM,12:57:00 PM
-7/8,Monday,Period 6,1:00:00 PM,1:50:00 PM
-7/8,Monday,Dismissal,1:50:00 PM,2:05:00 PM
-7/8,Tuesday,Homeroom,8:00:00 AM,8:12:00 AM
-7/8,Tuesday,Period 7,8:15:00 AM,9:00:00 AM
-7/8,Tuesday,Period 1,9:03:00 AM,9:55:00 AM
-7/8,Tuesday,Recess,9:55:00 AM,10:10:00 AM
-7/8,Tuesday,Period 2,10:13:00 AM,11:05:00 AM
-7/8,Tuesday,Period 3,11:08:00 AM,12:00:00 PM
-7/8,Tuesday,Lunch,12:00:00 PM,12:30:00 PM
-7/8,Tuesday,Period 4,12:33:00 PM,1:25:00 PM
-7/8,Tuesday,Period 5,1:28:00 PM,2:25:00 PM
-7/8,Tuesday,Dismissal,2:25:00 PM,2:40:00 PM
-7/8,Wednesday,Advisory,8:00:00 AM,8:45:00 AM
-7/8,Wednesday,Period 6,8:48:00 AM,9:40:00 AM
-7/8,Wednesday,Period 7,9:43:00 AM,10:35:00 AM
-7/8,Wednesday,Recess,10:35:00 AM,10:50:00 AM
-7/8,Wednesday,Period 1,10:53:00 AM,11:45:00 AM
-7/8,Wednesday,Lunch,11:45:00 AM,12:15:00 PM
-7/8,Wednesday,Period 2,12:18:00 PM,1:15:00 PM
-7/8,Wednesday,Dismissal,1:15:00 PM,1:30:00 PM
-7/8,Thursday,Homeroom,8:00:00 AM,8:12:00 AM
-7/8,Thursday,Period 3,8:15:00 AM,9:07:00 AM
-7/8,Thursday,Period 4,9:10:00 AM,10:02:00 AM
-7/8,Thursday,Recess,10:02:00 AM,10:17:00 AM
-7/8,Thursday,Period 5,10:20:00 AM,11:12:00 AM
-7/8,Thursday,Period 6,11:15:00 AM,12:07:00 PM
-7/8,Thursday,Lunch,12:07:00 PM,12:37:00 PM
-7/8,Thursday,Period 7,12:40:00 PM,1:32:00 PM
-7/8,Thursday,Period 1,1:35:00 PM,2:25:00 PM
-7/8,Thursday,Dismissal,2:25:00 PM,2:40:00 PM
-7/8,Friday,Homeroom,8:00:00 AM,8:12:00 AM
-7/8,Friday,Period 2,8:15:00 AM,9:00:00 AM
-7/8,Friday,Period 3,9:03:00 AM,9:48:00 AM
-7/8,Friday,Period 4,9:51:00 AM,10:36:00 AM
-7/8,Friday,Recess,10:36:00 AM,10:51:00 AM
-7/8,Friday,Period 5,10:54:00 AM,11:39:00 AM
-7/8,Friday,Period 6,11:42:00 AM,12:27:00 PM
-7/8,Friday,Lunch,12:27:00 PM,12:57:00 PM
-7/8,Friday,Period 7,1:00:00 PM,1:50:00 PM
-7/8,Friday,Dismissal,1:50:00 PM,2:05:00 PM
+78,Monday,HR,8:00:00 AM,8:12:00 AM
+78,Monday,Period 1,8:15:00 AM,9:00:00 AM
+78,Monday,Period 2,9:03:00 AM,9:48:00 AM
+78,Monday,Period 3,9:51:00 AM,10:36:00 AM
+78,Monday,Recess,10:36:00 AM,10:51:00 AM
+78,Monday,Period 4,10:54:00 AM,11:39:00 AM
+78,Monday,Period 5,11:42:00 AM,12:27:00 PM
+78,Monday,Lunch,12:27:00 PM,12:57:00 PM
+78,Monday,Period 6,1:00:00 PM,1:50:00 PM
+78,Monday,Dismissal,1:50:00 PM,2:05:00 PM
+78,Tuesday,Homeroom,8:00:00 AM,8:12:00 AM
+78,Tuesday,Period 7,8:15:00 AM,9:00:00 AM
+78,Tuesday,Period 1,9:03:00 AM,9:55:00 AM
+78,Tuesday,Recess,9:55:00 AM,10:10:00 AM
+78,Tuesday,Period 2,10:13:00 AM,11:05:00 AM
+78,Tuesday,Period 3,11:08:00 AM,12:00:00 PM
+78,Tuesday,Lunch,12:00:00 PM,12:30:00 PM
+78,Tuesday,Period 4,12:33:00 PM,1:25:00 PM
+78,Tuesday,Period 5,1:28:00 PM,2:25:00 PM
+78,Tuesday,Dismissal,2:25:00 PM,2:40:00 PM
+78,Wednesday,Advisory,8:00:00 AM,8:45:00 AM
+78,Wednesday,Period 6,8:48:00 AM,9:40:00 AM
+78,Wednesday,Period 7,9:43:00 AM,10:35:00 AM
+78,Wednesday,Recess,10:35:00 AM,10:50:00 AM
+78,Wednesday,Period 1,10:53:00 AM,11:45:00 AM
+78,Wednesday,Lunch,11:45:00 AM,12:15:00 PM
+78,Wednesday,Period 2,12:18:00 PM,1:15:00 PM
+78,Wednesday,Dismissal,1:15:00 PM,1:30:00 PM
+78,Thursday,Homeroom,8:00:00 AM,8:12:00 AM
+78,Thursday,Period 3,8:15:00 AM,9:07:00 AM
+78,Thursday,Period 4,9:10:00 AM,10:02:00 AM
+78,Thursday,Recess,10:02:00 AM,10:17:00 AM
+78,Thursday,Period 5,10:20:00 AM,11:12:00 AM
+78,Thursday,Period 6,11:15:00 AM,12:07:00 PM
+78,Thursday,Lunch,12:07:00 PM,12:37:00 PM
+78,Thursday,Period 7,12:40:00 PM,1:32:00 PM
+78,Thursday,Period 1,1:35:00 PM,2:25:00 PM
+78,Thursday,Dismissal,2:25:00 PM,2:40:00 PM
+78,Friday,Homeroom,8:00:00 AM,8:12:00 AM
+78,Friday,Period 2,8:15:00 AM,9:00:00 AM
+78,Friday,Period 3,9:03:00 AM,9:48:00 AM
+78,Friday,Period 4,9:51:00 AM,10:36:00 AM
+78,Friday,Recess,10:36:00 AM,10:51:00 AM
+78,Friday,Period 5,10:54:00 AM,11:39:00 AM
+78,Friday,Period 6,11:42:00 AM,12:27:00 PM
+78,Friday,Lunch,12:27:00 PM,12:57:00 PM
+78,Friday,Period 7,1:00:00 PM,1:50:00 PM
+78,Friday,Dismissal,1:50:00 PM,2:05:00 PM
