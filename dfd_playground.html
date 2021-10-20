@@ -139,53 +139,31 @@
     </div>
 
 <script>
-    function is_current_period(row, hour, minute){
+    function is_current_period(row, cur_timestamp){
         //row: Grade,Day,Period,StartTime,EndTime
-
-        start_time_array = row.iloc({rows: [0], columns: [3]}).values.toString().split(":")
-        start_hour = parseInt(start_time_array[0])
-        start_minute = parseInt(start_time_array[1])
-
-        end_time_array = row.iloc({rows: [0], columns: [4]}).values.toString().split(":")
-        end_hour = parseInt(end_time_array[0])
-        end_minute = parseInt(end_time_array[1])
+        timestamps = row2timestamps(row);
+        start_timestamp = timestamps[0];
+        end_timestamp = timestamps[1];
 
         // debugging
-        // console.log(start_hour)
-        // console.log(start_minute)
-        // console.log(end_hour)
-        // console.log(end_minute)
-        // console.log(hour)
-        // console.log(minute)
-
-        start_timestamp = new Date();
-        start_timestamp.setHours(start_hour,start_minute,0);
-
-        end_timestamp = new Date();
-        end_timestamp.setHours(end_hour,end_minute,0);
-
-        cur_timestamp = new Date();
-        cur_timestamp.setHours(hour,minute,0);
-
+        // console.log("starting timestamp: " + start_timestamp);
+        // console.log("current timestamp: " + cur_timestamp);
+        // console.log("ending timestamp" + end_timestamp);
+    
         if(cur_timestamp >= start_timestamp && cur_timestamp <= end_timestamp){
-                return true;
+            return true;
             }
         else{
             return false;
             }
-
     }
 
-    function time_left_in_period(row, hour, minute){
-        end_time_array = row.iloc({rows: [0], columns: [4]}).values.toString().split(":")
-        end_hour = parseInt(end_time_array[0])
-        end_minute = parseInt(end_time_array[1])
+    function time_left_in_period(row, cur_timestamp){
+        timestamps = row2timestamps(row);
+        end_timestamp = timestamps[1];
 
-        end_timestamp = new Date();
-        end_timestamp.setHours(end_hour,end_minute,0);
-
-        cur_timestamp = new Date();
-        cur_timestamp.setHours(hour,minute,0);
+        // console.log("current timestamp: " + cur_timestamp)
+        // console.log("ending timestamp: " + end_timestamp)
 
         return(diff_minutes(end_timestamp, cur_timestamp))
     }
@@ -194,6 +172,32 @@
         var diff =(dt2.getTime() - dt1.getTime()) / 1000;
         diff /= 60;
         return Math.abs(Math.round(diff));
+    }
+
+    function row2timestamps(row){
+        start_time_array = row.iloc({rows: [0], columns: [3]}).values.toString().split(":")
+        start_hour = parseInt(start_time_array[0])
+        start_minute = parseInt(start_time_array[1])
+        ampm = start_time_array[2].split(" ")[1]
+        if (ampm == "PM" && start_hour < 12){
+            start_hour = start_hour + 12
+        }
+
+        start_timestamp = new Date();
+        start_timestamp.setHours(start_hour,start_minute,0);
+
+        end_time_array = row.iloc({rows: [0], columns: [4]}).values.toString().split(":")
+        end_hour = parseInt(end_time_array[0])
+        end_minute = parseInt(end_time_array[1])
+        ampm = end_time_array[2].split(" ")[1]
+        if (ampm == "PM" && end_hour < 12){
+            end_hour = end_hour + 12
+        }
+        
+        end_timestamp = new Date();
+        end_timestamp.setHours(end_hour,end_minute,0);
+
+        return [start_timestamp, end_timestamp]
     }
     
     function get_day(day){
@@ -244,8 +248,8 @@
         var cur_dateTime = new Date();
         var date = cur_dateTime.toLocaleDateString();
         var day = get_day(cur_dateTime.getDay());
-        hour = cur_dateTime.getHours();
-        minute = cur_dateTime.getMinutes();
+        var cur_hour = cur_dateTime.getHours();
+        var cur_minute = cur_dateTime.getMinutes();
         formatted_time = time2string(cur_dateTime);
 
         let cur_period_6 = 'error';
@@ -257,9 +261,7 @@
         let next_period_78 = '';
         
         //debugging
-        // console.log(cur_hour);
-        // console.log(cur_min);
-        // console.log(time);
+        // console.log('current system timestamp: ' + cur_dateTime)
 
         //catch weekends
         if(day=="Saturday" || day == "Sunday"){
@@ -285,18 +287,17 @@
             var d6 = df.iloc( {rows: df["Grade"].eq(6)} );
             var df_6 = d6.iloc( {rows: d6["Day"].eq(day)} )
             df_6.reset_index({inplace:true})
-
             let num_rows = df_6.shape[0]
+
             for (let step = 0; step < num_rows; step++) {
                 let row = df_6.iloc({rows: [step], columns: [":"]})
-                let result = is_current_period(row, cur_hour, cur_min);
+                let result = is_current_period(row, cur_dateTime);
 
                 if(result == true){
-                    console.log('current period')
                     //current period
                     cur_info_6 = row.loc({columns: ["Period"]}).values.toString();
                     //get time left
-                    time_left_6 = time_left_in_period(row, cur_hour, cur_min) + " minutes left";
+                    time_left_6 = time_left_in_period(row, cur_dateTime) + " minutes left";
                     //get next period
                     next_period_6 = df_6.loc({rows: [step+1], columns: ["Period"]}).values.toString() + " is up next";
                 }
@@ -312,19 +313,22 @@
             num_rows = df_78.shape[0]
             for (let step = 0; step < num_rows; step++) {
                 let row = df_78.iloc({rows: [step], columns: [":"]})
-                let result = is_current_period(row, cur_hour, cur_min);
+                let result = is_current_period(row, cur_dateTime);
 
                 if(result == true){
-                    console.log('current period')
                     //current period
                     cur_info_78 = row.loc({columns: ["Period"]}).values.toString();
                     //get time left
-                    time_left_78 = time_left_in_period(row, cur_hour, cur_min) + " minutes left";
+                    time_left_78 = time_left_in_period(row, cur_dateTime) + " minutes left";
                     //get next period
                     next_period_78 = df_78.loc({rows: [step+1], columns: ["Period"]}).values.toString() + " is up next";
                 }
             }
         }
+
+        //debugging
+        // console.log("current info 6th: " + cur_info_6)
+        // console.log("current info 78: " + cur_info_78)
 
         document.getElementById("today").textContent = day;
 		document.getElementById("cur_time").textContent = formatted_time;
