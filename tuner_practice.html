@@ -22,6 +22,9 @@
         justify-content: center; /* align horizontal */
         align-items: center; /* align vertical */
     }
+    .boxes_section{
+        padding-left: 10px;
+    }
 </style>
 
 <html>
@@ -32,12 +35,6 @@
         </div>
 
         <div class="boxes_section">
-            <input type="checkbox" id="A" name="A">
-            <label for="A">A</label>
-            <br>
-            <input type="checkbox" id="b" name="b">
-            <label for="b">b</label>
-            <br>
             <input type="checkbox" id="c" name="c">
             <label for="c">c</label>
             <br>
@@ -50,14 +47,20 @@
             <input type="checkbox" id="f" name="f">
             <label for="f">f</label>
             <br>
+            <input type="checkbox" id="g" name="g">
+            <label for="g">g</label>
+            <br>
+            <input type="checkbox" id="A" name="A">
+            <label for="A">A</label>
+            <br>
+            <input type="checkbox" id="Bb" name="Bb">
+            <label for="Bb">Bb</label>
+            <br>
             <input type="checkbox" id="B" name="B">
             <label for="B">B</label>
             <br>
             <input type="checkbox" id="C" name="C">
             <label for="C">C</label>
-            <br>
-            <input type="checkbox" id="g" name="g">
-            <label for="g">g</label>
             <br>
             <input type="checkbox" id="D" name="D">
             <label for="D">D</label>
@@ -76,7 +79,7 @@
 </body>
 
 <script>
-    var possible_notes = ['A','b','c','d','e','f','B','C','g','D'];
+    var possible_notes = ['c','d','e','f','g','A','Bb','B','C', 'D'];
     var notes = []
     var num_notes = 0;
     var interval = setInterval(showletter, 2500);
