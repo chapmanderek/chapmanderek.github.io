@@ -299,7 +299,12 @@
                     //get time left
                     time_left_6 = time_left_in_period(row, cur_dateTime) + " minutes left";
                     //get next period
-                    next_period_6 = df_6.loc({rows: [step+1], columns: ["Period"]}).values.toString() + " is up next";
+                    next_period_6 = df_6.loc({rows: [step+1], columns: ["Period"]}).values.toString();
+                    //if the next thing is passing then get it and the actual next period
+                    if (next_period_6 == 'Passing'){
+                        next_period_6 = "Passing and then " + df_6.loc({rows: [step+2], columns: ["Period"]}).values.toString();
+                    }
+                    next_period_6 = next_period_6 + " is up next";
                 }
             }
 
@@ -321,7 +326,12 @@
                     //get time left
                     time_left_78 = time_left_in_period(row, cur_dateTime) + " minutes left";
                     //get next period
-                    next_period_78 = df_78.loc({rows: [step+1], columns: ["Period"]}).values.toString() + " is up next";
+                    next_period_78 = df_78.loc({rows: [step+1], columns: ["Period"]}).values.toString();
+                    //if the next thing is passing then get it and the actual next period
+                    if (next_period_78 == 'Passing'){
+                        next_period_78 = "Passing and then " + df_78.loc({rows: [step+2], columns: ["Period"]}).values.toString();
+                    }
+                    next_period_78 = next_period_78 + " is up next";
                 }
             }
         }
