@@ -1,0 +1,13 @@
+---
+output: 
+  html_document: 
+    theme: cosmo
+---
+
+## Portfolio
+
+### Current/Recent Projects
+
+**This Website!**
+
+Built entirely in R Studio as a RMarkdown website.  My last few classes were either Python or Java and I was looking for a way to get back into RStudio.
