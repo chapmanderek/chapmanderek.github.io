@@ -1,5 +1,10 @@
 name: "my-website"
 output_dir: 'docs'
+output:
+  html_document:
+    theme: cosmo
+    css: "style.css"
+    
 navbar:
   title: "My Website"
   left:
