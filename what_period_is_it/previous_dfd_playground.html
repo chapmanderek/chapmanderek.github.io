@@ -9,84 +9,84 @@
 </head>
 
 <style type="text/css">
-	table {
-	  font-family: verdana, sans-serif;
-	  border-collapse: collapse;
-	}
+    table {
+      font-family: verdana, sans-serif;
+      border-collapse: collapse;
+    }
 
-	td, th {
-	  border: 1px solid black;
-	  text-align: left;
-	  font-size: 14px;
-	  padding: 2px;
-	  vertical-align: middle;
-	}
+    td, th {
+      border: 1px solid black;
+      text-align: left;
+      font-size: 14px;
+      padding: 2px;
+      vertical-align: middle;
+    }
 
-	label {
-	    font: 1rem 'Fira Sans', sans-serif;
-	}
+    label {
+        font: 1rem 'Fira Sans', sans-serif;
+    }
 
-	header {
-		width:100%
-	}
+    header {
+        width:100%
+    }
 
-	body {
-	  margin: 5px;
-	}
+    body {
+      margin: 5px;
+    }
 
-	.container {
-	width: 1080px;
-	margin: 0 auto;
-	}
+    .container {
+    width: 1080px;
+    margin: 0 auto;
+    }
 
-	.wrapper {
-	    display: grid;
-	    grid-template-columns: [col1-start] 300px [col2-start] 250px [col3-start] 300px [col3-end];
-	    grid-template-rows: [row1-start] 100px [row2-start] 300px [row2-end];
-	    background-color: #fff;
-	    color: #444;
-	  }
-	.box {
-	    background-color: lightgrey;
-	    color: black;
-	    border-radius: 5px;
-	    padding: 10px;
-	    align-items: center;
+    .wrapper {
+        display: grid;
+        grid-template-columns: [col1-start] 300px [col2-start] 250px [col3-start] 300px [col3-end];
+        grid-template-rows: [row1-start] 100px [row2-start] 300px [row2-end];
+        background-color: #fff;
+        color: #444;
+      }
+    .box {
+        background-color: lightgrey;
+        color: black;
+        border-radius: 5px;
+        padding: 10px;
+        align-items: center;
 
-	  }
-	.title{
-		grid-column: col1-start / col3-end;
-		grid-row: row1-start;
-		/*color:  white;*/
-		font-family: sans-serif;
-		font-size: 50px;
-		/*background-color: #003f5c;  */
-		}
-	.refresh-button{
-		height:75px;
-		width:125px;
-		color:white;
-		background-color:darkgrey;
-		}
-	.left-6 {
-		grid-column: col1-start / col2-start;
-		grid-row:  row2-start/row2-end;
-		text-align: left;
-		font-family: sans-serif;
-		background-color: #cfbae1;
-		}
-	.center-info {
-		grid-column: col2-start / col3-start;
-		grid-row:  row2-start/row2-end;
-		color: #282828;
-		/*height:500px;*/
-		}
-	.right-78 {
-		grid-column: col3-start / col3-end;
-		grid-row:  row2-start/row2-end;
-		font-family: sans-serif;
-		background-color: #c1e0f7;
-		}
+      }
+    .title{
+        grid-column: col1-start / col3-end;
+        grid-row: row1-start;
+        /*color:  white;*/
+        font-family: sans-serif;
+        font-size: 50px;
+        /*background-color: #003f5c;  */
+        }
+    .refresh-button{
+        height:75px;
+        width:125px;
+        color:white;
+        background-color:darkgrey;
+        }
+    .left-6 {
+        grid-column: col1-start / col2-start;
+        grid-row:  row2-start/row2-end;
+        text-align: left;
+        font-family: sans-serif;
+        background-color: #cfbae1;
+        }
+    .center-info {
+        grid-column: col2-start / col3-start;
+        grid-row:  row2-start/row2-end;
+        color: #282828;
+        /*height:500px;*/
+        }
+    .right-78 {
+        grid-column: col3-start / col3-end;
+        grid-row:  row2-start/row2-end;
+        font-family: sans-serif;
+        background-color: #c1e0f7;
+        }
 </style>
 
 <body>    
@@ -201,9 +201,9 @@
     }
     
     function get_day(day){
-		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-		return days[day]
-	}
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        return days[day]
+    }
 
     function time2string(datetime){
         hour = datetime.getHours();
@@ -234,10 +234,10 @@
 
     function after_school(current, day){
         switch(day){
-			case("Monday" || "Friday"):
-				if(time >= new Date().setHours(8,0,0) && time < new Date().setHours(13,50,0)){return ["Passing", ""]}
-				if(time > new Date().setHours(14,5,0)){return ["Pau already",""]}
-				break;
+            case("Monday" || "Friday"):
+                if(time >= new Date().setHours(8,0,0) && time < new Date().setHours(13,50,0)){return ["Passing", ""]}
+                if(time > new Date().setHours(14,5,0)){return ["Pau already",""]}
+                break;
             case("Tuesday" || "Thursday"):
 
             case("Wednesday)"):
@@ -261,21 +261,22 @@
         let next_period_78 = '';
         
         //debugging
-        // console.log('current system timestamp: ' + cur_dateTime)
-
+        console.log('current system timestamp: ' + cur_dateTime)
+        console.log(after_school(cur_dateTime, day))
+        
         //catch weekends
         if(day=="Saturday" || day == "Sunday"){
-			var cur_info_6  = "It's the weekend!!";
-			var cur_info_78 = "It's the weekend!!";
+            var cur_info_6  = "It's the weekend!!";
+            var cur_info_78 = "It's the weekend!!";
         }
         //catch outside of school time
         else if(after_school(cur_dateTime, day) == true){
             var cur_info_6  = "School's pau already!!";
-			var cur_info_78 = "School's pau already!!";
+            var cur_info_78 = "School's pau already!!";
         }
         else{
         // dfd.read_csv("https://chapmanderek.github.io/bell_schedule_with_passing.csv").then(df => {   
-            df = await dfd.read_csv("https://chapmanderek.github.io/bell_schedule_with_passing.csv");
+            df = await dfd.read_csv("https://chapmanderek.github.io/what_period_is_it/bell_schedule_with_passing.csv");
             //debugging info
             // console.log(df)
             // df.head(3).print(); 
@@ -341,15 +342,15 @@
         // console.log("current info 78: " + cur_info_78)
 
         document.getElementById("today").textContent = day;
-		document.getElementById("cur_time").textContent = formatted_time;
-		document.getElementById("cur_date").textContent = date;
+        document.getElementById("cur_time").textContent = formatted_time;
+        document.getElementById("cur_date").textContent = date;
 
-		document.getElementById("period_output_6th").textContent  = cur_info_6;
-		document.getElementById("time_left_6th").textContent = time_left_6;
+        document.getElementById("period_output_6th").textContent  = cur_info_6;
+        document.getElementById("time_left_6th").textContent = time_left_6;
         document.getElementById("next_6th").textContent = next_period_6;
 
         document.getElementById("period_output_78").textContent  = cur_info_78;
-		document.getElementById("time_left_78").textContent = time_left_78;
+        document.getElementById("time_left_78").textContent = time_left_78;
         document.getElementById("next_78").textContent = next_period_78;
     } 
 
