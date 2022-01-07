@@ -29,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -219,6 +222,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -226,6 +292,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -273,14 +349,12 @@ $(document).ready(function () {
 </div>
 
 
-<div id="add-in-a-sidebar-toc" class="section level1">
-<h1>add in a sidebar TOC</h1>
 <div id="portfolio" class="section level2">
 <h2>Portfolio</h2>
 <div id="currentrecent-projects" class="section level3">
 <h3>Current/Recent Projects</h3>
 <div id="this-website" class="section level4">
-<h4><strong>This Website!</strong></h4>
+<h4><strong>This Website</strong></h4>
 <p>Built entirely in R Studio as an RMarkdown website. My last few classes were either Python or Java and I was looking for a way to get back into RStudio.</p>
 </div>
 <div id="out-of-order-book-finder" class="section level4">
@@ -297,44 +371,35 @@ Written primarily in Python using OpenCV and Pytesseract.<br />
 <div id="nowcasting-gentrification-presentation" class="section level4">
 <h4><strong>Nowcasting Gentrification Presentation</strong></h4>
 <p>I did an in depth review for a paper/method by Giovanni Quattrone’s group. They used AirBnB data to ‘nowcast’ (as opposed to predict) where gentrification was occurring in several large and medium sized cities.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="fix" class="section level1">
-<h1>fix</h1>
-<p><a href="">My Presentation</a></p>
+<p><a href="https://youtu.be/rYyU2fD6IXU">My Presentation</a></p>
 <p><a href="https://arxiv.org/abs/2101.05924">Original Paper</a></p>
+</div>
 <div id="predicting-health-inspection-scores" class="section level4">
 <h4><strong>Predicting Health Inspection Scores</strong></h4>
 <p>We were tasked with taking Yelp data and predicting what a future Health Inspection Score would be for a variety of restaurants.</p>
 <p>Technologies Used: Sentiment Analysis, Doc2Vec, Classification using Linear Regression and Random Forest, data cleaning, multiple large datasets.</p>
+<p><a href="DerekC_Task_6_report.pdf">Report</a></p>
 </div>
-</div>
-<div id="fix-1" class="section level1">
-<h1>fix</h1>
-<p><a href="">Report</a></p>
 <div id="nutrition-explorer---narrative-visualization" class="section level4">
 <h4><strong>Nutrition Explorer - Narrative Visualization</strong></h4>
 <p>For our Visualization class i built a webpage that allowed the end user to interactively explore various facets of food nutrition. There isn’t any direct messaging as the webpage allows the user to ‘drill down’ and view information cards (formatted to look similar to the USDA nutrition label). The entire webpage is built from scratch without use of any packages other than D3 and a slider.</p>
-<p>Technologies Used: Javascript, D3, CSS,</p>
+<p>Technologies Used: Javascript, D3, CSS, Data Cleaning.</p>
+<p><a href="nutrition_explorer/index.html">Nutrition Explorer</a></p>
 </div>
-</div>
-<div id="fix-2" class="section level1">
-<h1>fix</h1>
-<p><a href="">Nutrition Explorer Website:</a></p>
 <div id="sepsis-prediction---deep-learning-for-health-care" class="section level4">
 <h4><strong>Sepsis Prediction - Deep Learning for Health Care</strong></h4>
-<p>Our team investigated and implemented a state of the art LSTM Neural Network to predict Septic Shock in ER patients. Our model could predict shock significantly earlier than previous models or the currently accepted clincal tools.</p>
+<p>Our team investigated and implemented a state of the art LSTM Neural Network to predict Septic Shock in ER patients. Our model could predict shock significantly earlier than previous models or the currently accepted clincal tools. This project incoporated a number of <em>soft skills</em> since we had a diverse team living in 4 different timezones. Because I was in the middle i often was the liason between all of the team members and helped to assign work as well as coordinate the integration of the various parts.</p>
+<p>Skills Used: Neural Network Creation, Large Dataset Cleaning, Teamwork and Team Coordination, Project Integration.</p>
+<p><a href="LiSEP_Report.pdf">Team Report</a><br />
+<a href="https://www.nature.com/articles/s41598-019-51219-4">Original Paper: LiSep LSTM: A Machine Learning Algorithm for Early Detection of Septic Shock</a></p>
 </div>
 </div>
-<div id="fix-3" class="section level1">
-<h1>fix</h1>
-<p><a href="">Our Repo</a> <a href="">Team Report</a> <a href="">Original Paper: LiSep LSTM: A Machine Learning Algorithm for Early Detection of Septic Shock</a></p>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -367,6 +432,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

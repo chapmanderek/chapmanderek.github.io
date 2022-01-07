@@ -2,15 +2,17 @@
 output: 
   html_document: 
     theme: cosmo
+    toc: true
+    toc_float: true
+    toc_depth: 5
+    toc_collapsed: false
 ---
-
-# add in a sidebar TOC
 
 ## Portfolio
 
 ### Current/Recent Projects
 
-#### **This Website!**
+#### **This Website**
 
 Built entirely in R Studio as an RMarkdown website.  My last few classes were either Python or Java and I was looking for a way to get back into RStudio.
 
@@ -29,9 +31,7 @@ Written primarily in Python using OpenCV and Pytesseract.
 
 I did an in depth review for a paper/method by Giovanni Quattrone's group.  They used AirBnB data to 'nowcast' (as opposed to predict) where gentrification was occurring in several large and medium sized cities.
 
-# fix
-
-[My Presentation]()
+[My Presentation](https://youtu.be/rYyU2fD6IXU)
 
 [Original Paper](https://arxiv.org/abs/2101.05924)
 
@@ -41,25 +41,21 @@ We were tasked with taking Yelp data and predicting what a future Health Inspect
 
 Technologies Used: Sentiment Analysis, Doc2Vec, Classification using Linear Regression and Random Forest, data cleaning, multiple large datasets.  
 
-# fix
-[Report]()
+[Report](DerekC_Task_6_report.pdf)
 
 #### **Nutrition Explorer - Narrative Visualization**
 
 For our Visualization class i built a webpage that allowed the end user to interactively explore various facets of food nutrition.  There isn't any direct messaging as the webpage allows the user to 'drill down' and view information cards (formatted to look similar to the USDA nutrition label).  The entire webpage is built from scratch without use of any packages other than D3 and a slider.
 
-Technologies Used: Javascript, D3, CSS, 
+Technologies Used: Javascript, D3, CSS, Data Cleaning.
 
-# fix
-
-[Nutrition Explorer Website: ]()
+[Nutrition Explorer](nutrition_explorer/index.html)
 
 #### **Sepsis Prediction - Deep Learning for Health Care**
 
-Our team investigated and implemented a state of the art LSTM Neural Network to predict Septic Shock in ER patients.  Our model could predict shock significantly earlier than previous models or the currently accepted clincal tools.
+Our team investigated and implemented a state of the art LSTM Neural Network to predict Septic Shock in ER patients.  Our model could predict shock significantly earlier than previous models or the currently accepted clincal tools.  This project incoporated a number of *soft skills* since we had a diverse team living in 4 different timezones.  Because I was in the middle i often was the liason between all of the team members and helped to assign work as well as coordinate the integration of the various parts.
 
-# fix 
+Skills Used:  Neural Network Creation, Large Dataset Cleaning, Teamwork and Team Coordination, Project Integration.
 
-[Our Repo]() 
-[Team Report]() 
-[Original Paper: LiSep LSTM: A Machine Learning Algorithm for Early Detection of Septic Shock]() 
+[Team Report](LiSEP_Report.pdf)  
+[Original Paper: LiSep LSTM: A Machine Learning Algorithm for Early Detection of Septic Shock](https://www.nature.com/articles/s41598-019-51219-4)
