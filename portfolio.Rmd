@@ -7,6 +7,26 @@ output:
     toc_depth: 5
     toc_collapsed: false
 ---
+
+## Skills
+-Python, R, Numpy, Pandas, OpenCV  
+-Data Cleaning, Data Preparation, Large Datasets  
+-Visualizations with Matplotlib and RStudio  
+-Leadership (Head of 30+ person department)  
+-Running a Domain (1000 users, 2000+ devices)
+-Purchasing ($300,000+ yearly budget), Inventory Management, Project Management  
+-Excel, Google Sheets, Rmarkdown, Markdown  
+-Google Admin, Chromebooks troubleshooting and repair  
+
+## Experience With
+-Javascript, D3  
+-AWS, GCP  
+-Computer Vision
+-Arduino, Raspberry Pi, IoT, Prototype building/Bread boarding  
+-SQL, FilemakerPro, Databases  
+
+<br>
+
 ## Current/Recent Projects
 
 ### **This Website**
@@ -22,11 +42,21 @@ Written primarily in Python using OpenCV and Pytesseract.
 [Github: https://github.com/chapmanderek/oobf](https://github.com/chapmanderek/oobf)  
 [Report](https://github.com/chapmanderek/oobf/blob/main/Team-Skynet_Final-Project_Report.pdf)  
 
+### **What Period Is It?!?**
+
+This project was an interesting view into what makes a project 'popular'.  This webiste was by far the most pupular project/website I've put together.  I believe becuase it alliviated a common pain point in a simple manner it gained at lot of usage.  The school I currently work at has an insanely difficult bell schedule to follow.  For staff that need to ineract with all grade levels throughout the day it was a constant frustration to figure out what period it was... hence my simple but effective website.  After getting a number of feature requests I rebuilt the website using a javascript implementation of Pandas so that I could more easily fix issues and add requested features.
+
+Technologies Used: Javascript, Danfo.js
+
+<br>
+
 ## Graduate School Projects/Portfolio
 
 ### **Nowcasting Gentrification Presentation**
 
 I did an in depth review for a paper/method by Giovanni Quattrone's group.  They used AirBnB data to 'nowcast' (as opposed to predict) where gentrification was occurring in several large and medium sized cities.
+
+Skills Used:  Presentation, Report Writing, Deep Review of a Cutting Edge Research Paper
 
 [My Presentation](https://youtu.be/rYyU2fD6IXU)
 
@@ -52,7 +82,7 @@ Technologies Used: Javascript, D3, CSS, Data Cleaning.
 
 Our team investigated and implemented a state of the art LSTM Neural Network to predict Septic Shock in ER patients.  Our model could predict shock significantly earlier than previous models or the currently accepted clincal tools.  This project incoporated a number of *soft skills* since we had a diverse team living in 4 different timezones.  Because I was in the middle i often was the liason between all of the team members and helped to assign work as well as coordinate the integration of the various parts.
 
-Skills Used:  Neural Network Creation, Large Dataset Cleaning, Teamwork and Team Coordination, Project Integration.
+Skills Used:  Neural Network Creation, Large Dataset Cleaning, Team Coordination, Project Integration.
 
 [Team Report](LiSEP_Report.pdf)  
 [Original Paper: LiSep LSTM: A Machine Learning Algorithm for Early Detection of Septic Shock](https://www.nature.com/articles/s41598-019-51219-4)

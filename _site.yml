@@ -6,7 +6,7 @@ output:
     css: "style.css"
     
 navbar:
-  title: "My Website"
+  title: "Derek Chapman"
   left:
     - text: "Home"
       href: index.html

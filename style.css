@@ -1,5 +1,10 @@
 /* style sheet */
 
+body 
+  { 
+    background-color: #FDF1E6; 
+  }
+
 p {
   font-size: 20px;
   line-height: 1.5;
