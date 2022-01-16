@@ -14,10 +14,11 @@ I have a wonderful wife, great daughter, and two dogs that teach me patience eac
 
 ### Education
 
-In December of 2021 I completed my Masters of Computer Science in Data Science at the University of Illinois at Urbana-Champaign.  I earned a 4.0 throughout the entire program.  Prior to starting my masters I took a number of classes from the University of Michigan and John Hopkins University focusing on Python and Data Science to make sure I was prepared for a program as rigorous as the UIUC MCS-DS program.  
+In December of 2021 I completed my Master of Computer Science in Data Science at the University of Illinois at Urbana-Champaign.  I earned a 4.0 throughout the entire program.  Prior to starting my master I took a number of classes from the University of Michigan and John Hopkins University focusing on Python and Data Science to make sure I was prepared for a program as rigorous as the UIUC MCS-DS program.  
 
 While a student I was featured by Coursera in one of their newsletters!
 
 <center>![](coursera-newsletter.jpg){height=500px}</center>
 
 ### Resume
+[Full Resume](DerekChapman_Resume_1-16-22.pdf)
