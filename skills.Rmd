@@ -1,0 +1,24 @@
+---
+output: 
+  html_document: 
+    theme: cosmo
+title: Skills
+---
+
+## Skills
+-Python, R, Numpy, Pandas, OpenCV  
+-Data Cleaning, Data Preparation, Large Datasets  
+-Visualizations with Matplotlib and RStudio  
+-Leadership (Head of 30+ person department)  
+-Running a Domain (1000 users, 2000+ devices)
+-Purchasing ($300,000+ yearly budget), Inventory Management, Project Management  
+-Excel, Google Sheets, Rmarkdown, Markdown  
+-Google Admin, Chromebooks troubleshooting and repair  
+
+## Experience With
+-Javascript, D3  
+-AWS, GCP  
+-Computer Vision
+-Arduino, Raspberry Pi, IoT, Prototype building/Bread boarding  
+-SQL, FilemakerPro, Databases  
+

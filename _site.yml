@@ -14,7 +14,11 @@ navbar:
       href: about.html
     - text: "Contact"
       href: contact.html
+    - text: "Resume"
+      href: Derek_Chapman_resume.pdf
     - text: "Portfolio"
       href: portfolio.html
+    - text: "Skills"
+      href: skills.html
     - text: "What Period is it?!?"
       href: what_period_is_it/index.html
