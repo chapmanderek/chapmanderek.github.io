@@ -5,7 +5,7 @@ output:
 title: Welcome!
 ---
 
-My name is Derek Chapman.  Feel free to peruse my [projects page](portfolio.html) for recent and past projects I've worked on.  These are both personal/hobby projects as well as projects from graduate school.  If you're interested in hiring me please check my [contact page](contact.html) for information on getting in touch.  I'm actively looking for a data science/analyst/wrangler position and would be happy to talk with you about what is available at your company.  I am open to local positions in Hawaii, remote work, and relocating.
+My name is Derek Chapman.  Feel free to peruse my [projects page](portfolio.html) for recent and past projects I've worked on.  These are both personal/hobby projects as well as projects from graduate school.  If you're interested in collaborating on a project (not in the real estate sector) please check my [contact page](contact.html) for information on getting in touch.
 
 ![](images/intro_photo.jpeg)
 
